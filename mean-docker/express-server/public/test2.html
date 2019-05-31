@@ -1,0 +1,122 @@
+<!doctype html>
+
+<!-- ASSIGN OUR ANGULAR MODULE -->
+<html ng-app="meanTodo">
+<head>
+	<!-- META -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+
+	<title>账户--转账</title>
+
+	<!-- SCROLLS -->
+	<link rel="stylesheet" href="css/bootstrap.min.css"><!-- load bootstrap -->
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<style>
+		html 					{ overflow-y:scroll; }
+		body 					{ padding-top:15px; }
+		#todo-list 				{ margin-bottom:30px; }
+		#todo-form 	 			{ margin-bottom:50px; }
+		#header{
+			
+		}
+		#content{
+			
+		}
+		#left{
+			margin-top:100px;
+		}
+		#verticle{
+			width:1px;
+			border-left:0.5px solid;
+			border-left-color: #CCC;
+			float:left;
+			height:500px;
+		}
+		#right{
+
+			padding: 50px;
+			padding-top:120px;
+
+		}
+		.BUTTON{
+			height:80px;
+		}
+	</style>
+
+	<!-- SPELLS -->
+	<script src="https://cdn.staticfile.org/angular.js/1.4.6/angular.min.js"></script><!-- load angular -->
+	
+	<script src="js/controllers/main.js"></script> <!-- load up our controller -->
+	<script src="js/controllers/bankingMain.js"></script><!--加载我们的控制器-->
+	<script src="js/services/todos.js"></script> <!-- load our todo service -->
+	<script src="js/core.js"></script> <!-- load our main application -->
+
+</head>
+<!-- SET THE CONTROLLER -->
+<body ng-controller="mainController">
+	<div class="container">
+	
+		
+		<!-- HEADER AND DISPLAY USER'S NAME -->
+		<div class="jumbotron text-center" id="header" ng-model="Client.name"><!--加入了ng-model="Client.balance"-->
+			<h1><small>Hi, </small>{{Client.name}}</h1><!--括号部分修改为{{Client.name}}-->
+		</div>
+		<hr style="border-color:#CCC">
+		
+		<!--start main part-->
+		<div class="row" id="content">
+			<!--left part-->
+			<div class="col-sm-6 text-center" id="left" ng-model="Client.balance"><!--加入了ng-model="Client.balance"-->
+				<h1>Your Balance:</h1>
+				<br><br>
+				<h1>{{Client.balance}}</h1><!--括号修改为{{Client.balance}}-->
+				<p class="text-center" ng-show="loading">
+					<span class="fa fa-spinner fa-spin fa-3x"></span>
+				</p>
+			</div>
+			<div class="col-sm-1" id="verticle"><!--这个div模拟一条垂直分割线--></div>
+			<!--right part-->
+			<div class="col-sm-5 center-block" id="right">
+				
+				
+                <div class="row">
+						<div class="col-md-12 text-center" style="color:#2894FF">
+                              <h1>转账至账户：</h1>
+                              <input type="id" class="form-control Input" ng-model="receiver">
+              
+            <div class="row">
+						<div class="col-md-12 text-center" style="color:#2894FF">
+                              <h1>转账数额($)：</h1>
+                               <input type="id" class="form-control Input" ng-model="amount">
+                               </div>
+                               <br><br>
+             <div class="row">     
+					    <div class="col-md-12 text-center">
+                        <br><br>
+                                <button class="btn btn-secondary" type="button" ng-click="deposit()"><!--修改了OnClick部分-->
+                                  确认转账
+                                  </button>
+                                    </div>
+		</div>
+		
+                				
+			</div>
+		</div>
+		
+		<!--footer part-->
+
+
+		</div>
+	</div>
+	</div>
+	</div>
+			<!--footer part-->
+		<div class="container text-center" style="margin-top:30px;">
+			<hr style="border-color:#CCC">
+			<p>footer</p>
+			<a href="index.html">返回主页面</a>
+		</div>
+	
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!doctype html>
+
+<!-- ASSIGN OUR ANGULAR MODULE -->
+<html ng-app="meanTodo">
+<head>
+	<!-- META -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+
+	<title>账户--用户主页</title>
+
+	<!-- SCROLLS -->
+	<link rel="stylesheet" href="css/bootstrap.min.css"><!-- load bootstrap -->
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<style>
+		html 					{ overflow-y:scroll; }
+		body 					{ padding-top:15px; }
+		#todo-list 				{ margin-bottom:30px; }
+		#todo-form 	 			{ margin-bottom:50px; }
+		#header{
+			
+		}
+		#content{
+			
+		}
+		#left{
+			margin-top:100px;
+		}
+		#verticle{
+			width:1px;
+			border-left:0.5px solid;
+			border-left-color: #CCC;
+			float:left;
+			height:500px;
+		}
+		#right{
+
+			padding: 50px;
+			padding-top:120px;
+
+		}
+		.BUTTON{
+			height:80px;
+		}
+	</style>
+
+	<!-- SPELLS -->
+	<script src="https://cdn.staticfile.org/angular.js/1.4.6/angular.min.js"></script><!-- load angular -->
+	
+	<script src="js/controllers/main.js"></script> <!-- load up our controller -->
+	<script src="js/services/accounts.js"></script> <!-- load our todo service -->
+	<script src="js/core.js"></script> <!-- load our main application -->
+
+</head>
+<!-- SET THE CONTROLLER -->
+<body ng-controller="mainController">
+	<div class="container">
+	
+		
+		<!-- HEADER AND DISPLAY USER'S NAME -->
+		<div class="jumbotron text-center" id="header">
+			<h1><small>Hi, </small>{{Client.name}}</h1>
+		</div>
+		<hr style="border-color:#CCC">
+		
+		<!--start main part-->
+		<div class="row" id="content">
+			<!--left part-->
+			<div class="col-sm-6 text-center" id="left">
+				<h1>Your Balance:</h1>
+				<br><br>
+				<h1>{{Client.balance}}</h1>
+				<p class="text-center" ng-show="loading">
+					<span class="fa fa-spinner fa-spin fa-3x"></span>
+				</p>
+			</div>
+			<div class="col-sm-1" id="verticle"><!--这个div模拟一条垂直分割线--></div>
+			<!--right part-->
+			<div class="col-sm-5 center-block" id="right">
+				<a href="test1.html"><button type="button" class="btn btn-primary btn-lg btn-block BUTTON">存/取款</button></a>
+				<br><br><br><br><br>
+				<a href="test2.html"><button type="button" class="btn btn-primary btn-lg btn-block BUTTON" >转账业务</button></a>
+				
+
+			</div>
+		</div>
+		
+		<!--footer part-->
+		<div class="text-center" style="margin-top:30px;">
+			<hr style="border-color:#CCC">
+			<p>footer</p>
+		</div>
+
+		
+	</div>
+</body>
+</html>
